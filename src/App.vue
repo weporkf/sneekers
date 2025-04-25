@@ -3,7 +3,7 @@ import { ref, provide, computed } from 'vue'
 import MainHeader from './components/MainHeader.vue'
 import DrawerBasket from './components/DrawerBasket.vue'
 import axios from 'axios'
-import { useCartStore } from '../stores/carts'
+import { useCartStore } from '/src/stores/carts.js'
 
 const cartsStore = useCartStore()
 
@@ -20,6 +20,7 @@ const drawerOpen = ref(false)
 
 const openDrawer = () => {
   drawerOpen.value = true
+  console.log(drawerOpen.value)
 }
 
 const closeDrawer = () => {

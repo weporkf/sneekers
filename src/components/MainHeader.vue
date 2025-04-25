@@ -1,5 +1,9 @@
 <script setup>
+import { inject } from 'vue'
+
 const emit = defineEmits(['openDrawer'])
+
+const { openDrawer } = inject('cart')
 
 defineProps({
   totalPrice: Number
@@ -20,7 +24,7 @@ defineProps({
 
     <ul class="flex items-center gap-10">
       <li
-        @click="() => emit('openDrawer')"
+        @click="openDrawer"
         class="flex items-center cursor-pointer gap-3 text-gray-500 hover:text-black"
       >
         <img src="/cart.svg" alt="Cart" />
